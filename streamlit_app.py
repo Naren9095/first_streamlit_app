@@ -24,13 +24,19 @@ streamlit.dataframe(fruits_to_show)
 
 streamlit.header("FruityVice Advice! Check this once")
 
+fruit_choice = streamlit.text_input("Select a fruit to get FruityVice Advice","Raspberry")
+streamlit.write("User entered",fruit_choice)
+
+
 import requests
 # Making an API call to get the data
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+# printing the output in UI in Json format
 streamlit.text(fruityvice_response.json())
 
 # Using Pandas function to normalize the Json data, so the user can understand it easily
 FruityVice_Normalized = pandas.json_normalize(fruityvice_response.json())
+# printing the output in UI in Table format
 streamlit.dataframe(FruityVice_Normalized)
 
 
