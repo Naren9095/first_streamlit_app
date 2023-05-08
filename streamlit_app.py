@@ -39,6 +39,7 @@ FruityVice_Normalized = pandas.json_normalize(fruityvice_response.json())
 # printing the output in UI in Table format
 streamlit.dataframe(FruityVice_Normalized)
 
+#Connecting to snowflake to extract data from snowflake table
 import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -50,6 +51,8 @@ streamlit.dataframe(my_data_row)
 
 new_fruit = streamlit.text_input("What fruit would you like to add?")
 streamlit.write("Thanks for adding "+new_fruit)
+
+my_cur.execute("Insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+new_fruit+"')")
 
 
 
