@@ -55,7 +55,7 @@ streamlit.write("Thanks for adding "+new_fruit)
 if new_fruit: 
    my_cur.execute("Insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+new_fruit+"')")
 else: 
-   streamlit.stop
+   streamlit.write("")
 #    my_cur.execute("Insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+new_fruit+"')")
 
 
