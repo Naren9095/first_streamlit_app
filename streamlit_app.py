@@ -34,11 +34,12 @@ def get_fruityvice_advice(fruit_name):
       FruityVice_Normalized = pandas.json_normalize(fruityvice_response.json())
       return FruityVice_Normalized
 
+
 if not fruit_choice:
-   streamlit.error("Please enter a fruit to get information")
+      streamlit.error("Please enter a fruit to get information")
 else:
-   get_fruityvice_advice(fruit_choice)
-   streamlit.dataframe(FruityVice_Normalized)
+      fruitvice = get_fruityvice_advice(fruit_choice)
+      streamlit.dataframe(fruitvice)
 
 
 #Connecting to snowflake to extract data from snowflake table
