@@ -28,17 +28,17 @@ streamlit.header("FruityVice Advice! Check this once")
 fruit_choice = streamlit.text_input("Select a fruit to get FruityVice Advice")
 
 def get_fruityvice_advice(fruit_name):
-# Making an API call to get the data
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-# Using Pandas function to normalize the Json data, so the user can understand it easily
-FruityVice_Normalized = pandas.json_normalize(fruityvice_response.json())
-return FruityVice_Normalized
+      # Making an API call to get the data
+      fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+      # Using Pandas function to normalize the Json data, so the user can understand it easily
+      FruityVice_Normalized = pandas.json_normalize(fruityvice_response.json())
+      return FruityVice_Normalized
 
 if not fruit_choice:
    streamlit.error("Please enter a fruit to get information")
  else:
-get_fruityvice_advice(fruit_choice)
-streamlit.dataframe(FruityVice_Normalized)
+   get_fruityvice_advice(fruit_choice)
+   streamlit.dataframe(FruityVice_Normalized)
 
 
 #Connecting to snowflake to extract data from snowflake table
