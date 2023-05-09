@@ -50,10 +50,10 @@ streamlit.text("Fruit Load contains : ")
 streamlit.dataframe(my_data_row)
 
 new_fruit = streamlit.text_input("What fruit would you like to add?")
-streamlit.write("Thanks for adding "+new_fruit)
 
 if new_fruit: 
    my_cur.execute("Insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+new_fruit+"')")
+   streamlit.write("Thanks for adding "+new_fruit)
 else: 
    streamlit.write("")
 #    my_cur.execute("Insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+new_fruit+"')")
