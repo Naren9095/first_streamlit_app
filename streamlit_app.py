@@ -52,10 +52,10 @@ streamlit.dataframe(my_data_row)
 new_fruit = streamlit.text_input("What fruit would you like to add?")
 streamlit.write("Thanks for adding "+new_fruit)
 
-if new_fruit is None: 
-   streamlit.write("do not insert") 
+if new_fruit: 
+   streamlit.write("Insert") 
 else: 
-   streamlit.write("Insert into the table") 
+   streamlit.write("Do not insert") 
 #    my_cur.execute("Insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+new_fruit+"')")
 
 
