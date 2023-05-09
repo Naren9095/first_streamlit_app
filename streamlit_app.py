@@ -53,9 +53,9 @@ new_fruit = streamlit.text_input("What fruit would you like to add?")
 streamlit.write("Thanks for adding "+new_fruit)
 
 if new_fruit: 
-   streamlit.write("Insert") 
+   my_cur.execute("Insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+new_fruit+"')")
 else: 
-   streamlit.write("Do not insert") 
+   streamlit.stop
 #    my_cur.execute("Insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST values('"+new_fruit+"')")
 
 
