@@ -36,7 +36,7 @@ def get_fruityvice_advice(fruit_name):
 
 if not fruit_choice:
    streamlit.error("Please enter a fruit to get information")
- else:
+else:
    get_fruityvice_advice(fruit_choice)
    streamlit.dataframe(FruityVice_Normalized)
 
